@@ -695,6 +695,54 @@ class GalaxyPortfolio {
                     'asset/AbsensiWajah (4).png'
                 ],
                 githubLink: 'https://github.com/ImamMahatirHasibuan/EmotionDetection',
+            },
+            project6: {
+                title: {
+                    en: 'Food Bridge',
+                    id: 'Jembatan Makanan'
+                },
+                description: {
+                    en: 'a web-based food donation management platform designed to connect food surpluses from donors (such as restaurants, stores, or catering services) with recipients (like orphanages, charities, or food banks) and facilitate the pickup/delivery process through volunteers. The goal is to reduce food waste, combat hunger, and build a more responsible community.',
+                    id: 'platform manajemen donasi makanan berbasis web yang dirancang untuk mempertemukan kelebihan makanan dari donatur (seperti restoran, toko, atau katering) dengan penerima donasi (seperti panti asuhan, yayasan amal, atau bank makanan) dan memfasilitasi proses penjemputan/pengiriman melalui sukarelawan. Tujuannya adalah mengurangi pemborosan makanan, melawan kelaparan, dan membangun komunitas yang lebih bertanggung jawab.'
+                },
+                technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'XAMPP'],
+                features: [
+                    {
+                        title: { en: 'Role-Based Authentication', id: 'Otentikasi Berbasis Peran' },
+                        description: { 
+                            en: 'A login and registration system that segments users into four main roles: Food Donor, Food Recipient, Volunteer, and Admin. Each role has unique dashboard access and functionalities.',
+                            id: 'Sistem login dan registrasi yang memisahkan pengguna menjadi empat peran utama: Food Donor, Food Recipient, Volunteer, dan Admin. Setiap peran memiliki akses dan fungsionalitas dashboard yang unik.'
+                        }
+                    },
+                    {
+                        title: { en: 'Food Donation Management', id: 'Manajemen Donasi Makanan' },
+                        description: { 
+                            en: 'Food Donors can easily create, edit, and publish new donations (detailing food type, quantity, pickup time, and expiry time). Donations automatically have an available status and are visible on the recipient dashboard.',
+                            id: 'Donor Makanan dapat dengan mudah membuat, mengedit, dan mempublikasikan donasi baru (dengan detail jenis makanan, kuantitas, waktu penjemputan, dan waktu kedaluwarsa). Donasi akan otomatis memiliki status available dan terlihat di dashboard penerima.'
+                        }
+                    },
+                    {
+                        title: { en: 'Volunteer Assignment', id: 'Penugasan Sukarelawan' },
+                        description: { 
+                            en: 'The system allows donors/admins to assign a Volunteer to pick up the claimed donation and deliver it to the recipient. Volunteers receive detailed route information.',
+                            id: 'Sistem memungkinkan donor/admin untuk menetapkan Sukarelawan untuk mengambil donasi yang telah diklaim dan mengirimkannya kepada penerima. Sukarelawan akan mendapatkan rincian rute.'
+                        }
+                    },
+                    {
+                        title: { en: 'Donation Claim by Recipient', id: 'Klaim Donasi oleh Penerima' },
+                        description: { 
+                            en: 'Food Recipients can view the list of available donations and claim the ones they need. The donation status changes from available to claimed.',
+                            id: 'Penerima Makanan dapat melihat daftar donasi yang tersedia dan mengklaim donasi yang mereka butuhkan. Status donasi akan berubah dari available menjadi claimed.'
+                        }
+                    }
+                ],
+                images: [
+                    'asset/FoodBridge (1).png',
+                    'asset/FoodBridge (2).png',
+                    'asset/FoodBridge (3).png',
+                    'asset/FoodBridge (4).png'
+                ],
+                githubLink: 'https://github.com/ImamMahatirHasibuan/FoodBridge',
             }
         };
 
