@@ -52,6 +52,11 @@
                         <p class="card-gpa">GPA: 3.04</p>
                     </div>
                 </div>
+                <p class="swipe-hint"
+                    data-en="Swipe or drag the card to move."
+                    data-id="Geser atau tarik kartu untuk menggerakkan.">
+                    Geser atau tarik kartu untuk menggerakkan.
+                </p>
             </div>
 
             <!-- Description -->
@@ -387,31 +392,45 @@
             <h2 class="main-title" data-en="Certificates" data-id="Sertifikat">Certificates</h2>
             <div class="certificates-grid">
                 <div class="certificate-card">
-                    <img src="asset/sERTIFbelinguaA_page-0001.jpg" alt="React Certificate">
+                    <img src="asset/sERTIFbelinguaA_page-0001.jpg" alt="Beelingua Course A Certification" 
+                         onclick="openCertificateModal(this, 'Beelingua Course A Certification')"
+                         style="cursor:pointer;">
                     <h3>Beelingua Course A Certification</h3>
                 </div>
                 <div class="certificate-card">
-                    <img src="asset/SertifbelinguaB_page-0001.jpg" alt="AWS Certificate">
+                    <img src="asset/SertifbelinguaB_page-0001.jpg" alt="Beelingua Course B Certification"
+                         onclick="openCertificateModal(this, 'Beelingua Course B Certification')"
+                         style="cursor:pointer;">
                     <h3>Beelingua Course B Certification</h3>
                 </div>
                 <div class="certificate-card">
-                    <img src="asset/CertiMetaAI.jpg" alt="JavaScript Certificate">
+                    <img src="asset/CertiMetaAI.jpg" alt="Meta AI Seminar Certification"
+                         onclick="openCertificateModal(this, 'Meta AI Seminar Certification')"
+                         style="cursor:pointer;">
                     <h3>Meta AI Seminar Certification</h3>
                 </div>
                 <div class="certificate-card">
-                    <img src="asset/CertifJavaBasic.png" alt="JavaScript Certificate">
+                    <img src="asset/CertifJavaBasic.png" alt="Java Basic Certification"
+                         onclick="openCertificateModal(this, 'Java Basic Certification')"
+                         style="cursor:pointer;">
                     <h3>Java Basic Certification</h3>
                 </div>
                 <div class="certificate-card">
-                    <img src="asset/CertifCBasic.png" alt="JavaScript Certificate">
+                    <img src="asset/CertifCBasic.png" alt="C# Basic Certification"
+                         onclick="openCertificateModal(this, 'C# Basic Certification')"
+                         style="cursor:pointer;">
                     <h3>C# Basic Certification</h3>
                 </div>
                 <div class="certificate-card">
-                    <img src="asset/PythonBasic.png" alt="JavaScript Certificate">
+                    <img src="asset/PythonBasic.png" alt="Python Basic Certification"
+                         onclick="openCertificateModal(this, 'Python Basic Certification')"
+                         style="cursor:pointer;">
                     <h3>Python Basic Certification</h3>
                 </div>
                 <div class="certificate-card">
-                    <img src="asset/SQLbasic.png" alt="JavaScript Certificate">
+                    <img src="asset/SQLbasic.png" alt="SQL Basic Certification"
+                         onclick="openCertificateModal(this, 'SQL Basic Certification')"
+                         style="cursor:pointer;">
                     <h3>SQL Basic Certification</h3>
                 </div>
             </div>
@@ -431,11 +450,11 @@
                     <i class="fab fa-instagram"></i>
                     <span>Instagram</span>
                 </a>
-                <a href="imamahatir@gmail.com" class="contact-card email">
+                <a href="#" onclick="openEmailModal()" class="contact-card email">
                     <i class="fas fa-envelope"></i>
                     <span>Email</span>
                 </a>
-                <a href="https://www.linkedin.com/in/imam-mahatir-75169a2a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app " class="contact-card linkedin">
+                <a href="https://www.linkedin.com/in/imam-mahatir-75169a2a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="contact-card linkedin">
                     <i class="fab fa-linkedin"></i>
                     <span>LinkedIn</span>
                 </a>
@@ -447,6 +466,54 @@
     <button id="scroll-to-top">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- Certificate Modal -->
+<div id="certificate-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:#222; padding:24px; border-radius:16px; text-align:center; max-width:90vw; max-height:90vh; position:relative;">
+        <span id="close-certificate-modal" style="position:absolute; top:16px; right:24px; font-size:2em; color:#fff; cursor:pointer;">&times;</span>
+        <img id="modal-certificate-img" src="" alt="Certificate" style="max-width:80vw; max-height:70vh; border-radius:12px; box-shadow:0 4px 24px #6366f1;">
+        <div id="modal-certificate-title" style="margin-top:16px; font-size:1.3em; color:#fff; font-weight:bold;"></div>
+    </div>
+</div>
+
+    <!-- Email Modal -->
+<div id="email-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:#222; padding:32px; border-radius:16px; max-width:500px; width:90%; position:relative;">
+        <span id="close-email-modal" style="position:absolute; top:16px; right:24px; font-size:2em; color:#fff; cursor:pointer;">&times;</span>
+        <h3 style="color:#fff; margin-bottom:24px; text-align:center;">Send Email</h3>
+        
+        <form id="email-form">
+            <div style="margin-bottom:16px;">
+                <label style="color:#6366f1; display:block; margin-bottom:8px;">To:</label>
+                <input type="email" id="email-to" value="imamahatir@gmail.com" readonly 
+                       style="width:100%; padding:12px; border:1px solid #6366f1; border-radius:8px; background:#333; color:#fff;">
+            </div>
+            
+            <div style="margin-bottom:16px;">
+                <label style="color:#6366f1; display:block; margin-bottom:8px;">Subject:</label>
+                <input type="text" id="email-subject" placeholder="Enter subject..." 
+                       style="width:100%; padding:12px; border:1px solid #6366f1; border-radius:8px; background:#333; color:#fff;">
+            </div>
+            
+            <div style="margin-bottom:24px;">
+                <label style="color:#6366f1; display:block; margin-bottom:8px;">Message:</label>
+                <textarea id="email-body" rows="6" placeholder="Write your message..." 
+                          style="width:100%; padding:12px; border:1px solid #6366f1; border-radius:8px; background:#333; color:#fff; resize:vertical;"></textarea>
+            </div>
+            
+            <div style="text-align:center;">
+                <button type="button" id="send-email-btn" 
+                        style="background:#6366f1; color:#fff; padding:12px 24px; border:none; border-radius:8px; cursor:pointer; font-weight:bold; margin-right:12px;">
+                    Send Email
+                </button>
+                <button type="button" id="cancel-email-btn" 
+                        style="background:#666; color:#fff; padding:12px 24px; border:none; border-radius:8px; cursor:pointer;">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 
     <script src="Portofolio.js"></script>
 </body>

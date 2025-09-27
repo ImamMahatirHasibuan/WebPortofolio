@@ -1292,6 +1292,123 @@ window.openActivityDesc = function(img) {
     }
 }
 
+// Certificate Modal Functions
+function openCertificateModal(img, title) {
+    const modal = document.getElementById('certificate-modal');
+    const modalImg = document.getElementById('modal-certificate-img');
+    const modalTitle = document.getElementById('modal-certificate-title');
+    
+    if (modal && modalImg && modalTitle) {
+        modalImg.src = img.src;
+        modalTitle.textContent = title || img.alt || 'Certificate';
+        modal.style.display = 'flex';
+    }
+}
+
+// Close Certificate Modal
+document.getElementById('close-certificate-modal').onclick = function() {
+    document.getElementById('certificate-modal').style.display = 'none';
+};
+
+// Close modal when clicking outside
+document.getElementById('certificate-modal').onclick = function(e) {
+    if (e.target === this) {
+        this.style.display = 'none';
+    }
+};
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('certificate-modal');
+        if (modal && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+        }
+    }
+});
+
+// Email Modal Functions
+window.openEmailModal = function() {
+    const modal = document.getElementById('email-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+        
+        // Set default values
+        const subjectInput = document.getElementById('email-subject');
+        const bodyInput = document.getElementById('email-body');
+        
+        if (subjectInput) subjectInput.value = 'Hello from Portfolio';
+        if (bodyInput) bodyInput.value = 'Hi Imam,\n\nI found your portfolio and would like to connect.\n\nBest regards,';
+    }
+}
+
+// Setup Email Modal Events
+document.addEventListener('DOMContentLoaded', () => {
+    // Close Email Modal
+    const closeEmailModal = document.getElementById('close-email-modal');
+    const cancelEmailBtn = document.getElementById('cancel-email-btn');
+    const emailModal = document.getElementById('email-modal');
+    
+    if (closeEmailModal) {
+        closeEmailModal.onclick = function() {
+            emailModal.style.display = 'none';
+        };
+    }
+    
+    if (cancelEmailBtn) {
+        cancelEmailBtn.onclick = function() {
+            emailModal.style.display = 'none';
+        };
+    }
+
+    // Send Email Function
+    const sendEmailBtn = document.getElementById('send-email-btn');
+    if (sendEmailBtn) {
+        sendEmailBtn.onclick = function() {
+            const to = document.getElementById('email-to').value;
+            const subject = document.getElementById('email-subject').value;
+            const body = document.getElementById('email-body').value;
+            
+            if (!subject.trim()) {
+                alert('Please enter a subject');
+                return;
+            }
+            
+            if (!body.trim()) {
+                alert('Please enter a message');
+                return;
+            }
+            
+            const encodedSubject = encodeURIComponent(subject);
+            const encodedBody = encodeURIComponent(body);
+            
+            window.location.href = `mailto:${to}?subject=${encodedSubject}&body=${encodedBody}`;
+            
+            // Close modal after sending
+            emailModal.style.display = 'none';
+        };
+    }
+
+    // Close modal when clicking outside
+    if (emailModal) {
+        emailModal.onclick = function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        };
+    }
+
+    // Close on Escape key for email modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById('email-modal');
+            if (modal && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            }
+        }
+    });
+});
+
 // Initialize the portfolio when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     const portfolio = new GalaxyPortfolio();

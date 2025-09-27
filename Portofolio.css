@@ -646,6 +646,8 @@ body {
 /* ID Card Styles */
 .id-card-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;  /* Tambahkan ini agar semua elemen rata tengah */
     justify-content: center;
     margin-bottom: 4rem;
     position: relative;
@@ -653,14 +655,28 @@ body {
 
 .lanyard {
     position: absolute;
-    top: -60px;
+    top: -60px;  /* Kembali ke ukuran asli */
     left: 50%;
     transform: translateX(-50%);
-    width: 4px;
-    height: 60px;
+    width: 4px;  /* Kembali ke ukuran asli */
+    height: 60px;  /* Kembali ke ukuran asli */
     background: linear-gradient(180deg, #a855f7, #ec4899);
-    border-radius: 2px;
-    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+    border-radius: 2px;  /* Kembali ke ukuran asli */
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);  /* Tambah shadow */
+}
+
+/* Swipe Hint for ID Card */
+.swipe-hint {
+    font-size: 0.95em;
+    color: #6366f1;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 0;
+    opacity: 0.85;
+    font-style: italic;
+    font-weight: 500;
+    width: 100%;  /* Tambahkan ini */
+    align-self: center;  /* Tambahkan ini */
 }
 
 .id-card {
@@ -749,6 +765,8 @@ body {
     color: #fbbf24;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+
 
 /* Description Card */
 .description-card {
