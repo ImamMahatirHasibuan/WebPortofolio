@@ -743,6 +743,53 @@ class GalaxyPortfolio {
                     'asset/FoodBridge (4).png'
                 ],
                 githubLink: 'https://github.com/ImamMahatirHasibuan/FoodBridge',
+            },
+            project7: {
+                title: {
+                    en: 'Rooter',
+                    id: 'Rooter'
+                },
+                description: {
+                    en: 'A comprehensive network infrastructure design project utilizing Cisco technologies for the BINUS Bekasi campus. This project includes developing detailed network topologies, configuring routers and switches, and implementing subnetting schemes to optimize IP address allocation. The design aims to ensure secure and reliable connectivity for different departments and units within the building, while maintaining scalability for future growth.',
+                    id: 'Sebuah proyek perancangan infrastruktur jaringan menggunakan teknologi Cisco untuk kampus BINUS Bekasi. Proyek ini mencakup pembuatan topologi jaringan yang terperinci, konfigurasi router dan switch, serta penerapan skema subnetting untuk mengoptimalkan penggunaan alamat IP. Perancangan jaringan ini bertujuan untuk memastikan konektivitas yang aman, andal, dan efisien bagi setiap departemen serta unit yang ada di dalam gedung, sekaligus mendukung skalabilitas untuk kebutuhan di masa depan.'
+                },
+                technologies: ['Cisco Packet Tracer', 'Network Design', 'Routing Protocols'],
+                features: [
+                    {
+                        title: { en: 'Network Topology', id: 'Topologi Jaringan' },
+                        description: { 
+                            en: 'Provides a visual guide for technicians in installation and troubleshooting.',
+                            id: 'Memberikan panduan visual bagi teknisi dalam pemasangan dan troubleshooting.'
+                        }
+                    },
+                    {
+                        title: { en: 'Router Configuration', id: 'Router Configuration' },
+                        description: { 
+                            en: 'Connects different subnets to ensure smooth communication..',
+                            id: 'Menghubungkan subnet berbeda sehingga komunikasi tetap lancar.'
+                        }
+                    },
+                    {
+                        title: { en: 'Switch VLAN', id: 'Switch VLAN' },
+                        description: { 
+                            en: 'Segregates network traffic to enhance security and efficiency.',
+                            id: 'Memisahkan lalu lintas jaringan agar lebih aman dan efisien.'
+                        }
+                    },
+                    {
+                        title: { en: 'Subnetting', id: 'Subnetting' },
+                        description: { 
+                            en: 'Conserves IP addresses, simplifies management, and improves security.',
+                            id: 'Menghemat alamat IP, memudahkan manajemen, dan meningkatkan keamanan.'
+                        }
+                    }
+                ],
+                images: [
+                    'asset/Cisco (1).png',
+                    'asset/Cisco (2).png',
+                    'asset/Cisco (3).png',
+                    'asset/Cisco (4).png'
+                ],
             }
         };
 
@@ -796,6 +843,17 @@ class GalaxyPortfolio {
             `;
         }
 
+        // Only show GitHub link if available (exclude project7)
+        let githubLinkHtml = '';
+        if (project.githubLink && projectId !== 'project7') {
+            githubLinkHtml = `
+                <a href="${project.githubLink}" target="_blank" class="modal-link">
+                    <i class="fab fa-github"></i>
+                    ${lang === 'en' ? 'View Source Code' : 'Lihat Kode Sumber'}
+                </a>
+            `;
+        }
+
         const modalContent = `
             <div class="modal-project">
                 <div class="modal-header">
@@ -839,10 +897,7 @@ class GalaxyPortfolio {
                 </div>
 
                 <div class="modal-links">
-                    <a href="${project.githubLink}" target="_blank" class="modal-link">
-                        <i class="fab fa-github"></i>
-                        ${lang === 'en' ? 'View Source Code' : 'Lihat Kode Sumber'}
-                    </a>
+                    ${githubLinkHtml}
                     ${demoLinkHtml}
                 </div>
             </div>
