@@ -1333,12 +1333,12 @@ window.openEmailModal = function() {
     if (modal) {
         modal.style.display = 'flex';
         
-        // Set default values
+        // Kosongkan field subject dan body (tidak diisi default)
         const subjectInput = document.getElementById('email-subject');
         const bodyInput = document.getElementById('email-body');
         
-        if (subjectInput) subjectInput.value = 'Hello from Portfolio';
-        if (bodyInput) bodyInput.value = 'Hi Imam,\n\nI found your portfolio and would like to connect.\n\nBest regards,';
+        if (subjectInput) subjectInput.value = '';
+        if (bodyInput) bodyInput.value = '';
     }
 }
 
