@@ -746,8 +746,8 @@ class GalaxyPortfolio {
             },
             project7: {
                 title: {
-                    en: 'Rooter',
-                    id: 'Rooter'
+                    en: 'Router',
+                    id: 'Router'
                 },
                 description: {
                     en: 'A comprehensive network infrastructure design project utilizing Cisco technologies for the BINUS Bekasi campus. This project includes developing detailed network topologies, configuring routers and switches, and implementing subnetting schemes to optimize IP address allocation. The design aims to ensure secure and reliable connectivity for different departments and units within the building, while maintaining scalability for future growth.',
